@@ -114,10 +114,10 @@ nav .nav-links li:hover a {
 }
 
 .hero {
-    background-image: url(../assets/banner.jpg);
+    /* background-image: url(../assets/banner.jpg);
     background-position: center;
-    background-size: cover;
-    height: 100vh;
+    background-size: cover; */
+    /* height: 100vh; */
     position: relative;
     z-index: 1;
     display: flex;
