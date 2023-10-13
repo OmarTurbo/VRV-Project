@@ -127,6 +127,7 @@ nav .nav-links li:hover a {
 }
 
 .hero h1 {
+
     font-size: 40px;
     font-weight: 300;
 }
@@ -135,7 +136,7 @@ nav .nav-links li:hover a {
     color: rgb(255, 69, 69);
     font-weight: 800;
 }
-
+/* 
 .hero::before {
     content: "";
     position: absolute;
@@ -143,7 +144,7 @@ nav .nav-links li:hover a {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: -1;
-}
+} */
 
 .hero button {
     width: 10%;
@@ -353,7 +354,6 @@ nav .nav-links li:hover a {
 
 /* Footer */
 footer {
-    background-color: rgba(46, 46, 46, 0.8);
     padding: 50px 0;
     position: relative;
 }
@@ -394,7 +394,6 @@ footer li a:hover::after {
 }
 
 footer .sub-foot {
-    background-color: #2f2f2faa;
     width: 100%;
     position: absolute;
     bottom: 0;

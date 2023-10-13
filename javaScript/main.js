@@ -6,8 +6,8 @@ $(document).ready(()=>{
 
 // changing Navbar
 
-// let changingPart = $('.hero').offset().top; // The length from the top to the section
-// // changing the navbar color smoothly
+let changingPart = $('.hero').offset().top; // The length from the top to the section
+// changing the navbar color smoothly
 // $(window).scroll(() => {
 //     let wScroll = $(window).scrollTop();
 //     if (wScroll > changingPart) {
