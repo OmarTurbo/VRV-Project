@@ -1,3 +1,4 @@
+/*Start Main Rules */
 * {
     margin: 0;
     padding: 0;
@@ -11,10 +12,8 @@
 }
 
 body {
-    background-image: url(../assets/background.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(76, 76, 76, 1) 47%, rgba(11, 11, 11, 1) 100%);
 }
 
 /* Loading screen */
@@ -38,13 +37,14 @@ body {
     width: 50%;
     opacity: 1;
 }
-
+/*End Main Rules */
 /* Header */
 /* Navbar */
 nav {
     width: 100%;
     height: 150px;
     position: fixed;
+    top: 0;
     z-index: 998;
 }
 
@@ -114,10 +114,6 @@ nav .nav-links li:hover a {
 }
 
 .hero {
-    /* background-image: url(../assets/banner.jpg);
-    background-position: center;
-    background-size: cover; */
-    /* height: 100vh; */
     position: relative;
     z-index: 1;
     display: flex;
@@ -136,15 +132,6 @@ nav .nav-links li:hover a {
     color: rgb(255, 69, 69);
     font-weight: 800;
 }
-/* 
-.hero::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-} */
 
 .hero button {
     width: 10%;
@@ -153,6 +140,20 @@ nav .nav-links li:hover a {
 .hero button a {
     text-decoration: none;
     color: #fff;
+}
+
+.hero button:hover a {
+    color: #000;
+}
+
+/* Small Slider */
+.small-slider {
+    border-bottom: 1px solid #000;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background: rgb(0, 0, 0);
 }
 
 /* header Responsive */
@@ -250,8 +251,17 @@ nav .nav-links li:hover a {
 
 .video video {
     width: 100%;
-    height: 100%;
     position: relative;
+}
+
+.video video::before {
+    content: "";
+    background-color: #fff;
+    height: 5px;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .overlay {
@@ -264,6 +274,14 @@ nav .nav-links li:hover a {
     bottom: 0;
     right: 0;
     z-index: 1;
+}
+
+.about .form-control {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(85deg, rgba(0, 0, 0, 1) 0%, rgba(76, 76, 76, 1) 63%);
+    color: #fff;
+    border: none;
+    margin: 20px 0;
 }
 
 .team-member {
@@ -285,70 +303,33 @@ nav .nav-links li:hover a {
     font-weight: 700;
 }
 
-.team-member .card {
-    background-color: transparent;
-    position: relative;
-    overflow: hidden;
-    z-index: 2;
+.team-member .show-contact {
+    display: none;
 }
 
-.team-member .card .about-member {
-    position: absolute;
-    bottom: -35%;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    transition: all 0.5s ease;
-    text-align: left;
-}
-
-.team-member .card .about-member p {
-    font-size: 16px;
-    font-weight: 400;
-}
-
-.team-member .card:hover .about-member {
-    bottom: 0;
+.team-member .show-contact a {
+    color: #fff;
 }
 
 /* video Responsive */
 @media screen and (max-width:776px) {
-    .team-member .row {
-        flex-direction: row;
-        flex-wrap: nowrap;
+    .team-member h3 {
+        font-size: 20px;
     }
 
-    .team-member .col-md-4 {
-        width: 200px;
-        z-index: 2;
-        position: relative;
-    }
-
-    .team-member .card:hover {
-        transform: rotateY(360deg) translateY(-100px);
-
-    }
-
-    .team-member .card .about-member {
-        opacity: 1;
-        z-index: -1;
-    }
-
-    .team-member .card .about-member h5 {
-        font-size: 10px;
-    }
-
-    .team-member .card .about-member p {
-        font-size: 10px;
-    }
-
-    .team-member .card:hover .about-member {
-        z-index: 1;
+    .team-member p {
+        font-size: 16px;
+        font-weight: 400;
     }
 }
 
-@media (max-width:500px) {
-    .video {
+@media screen and (max-width:686px) {
+    .team-member .row {
         display: none;
+    }
+
+    .team-member .show-contact {
+        display: inline-block;
     }
 }
 
