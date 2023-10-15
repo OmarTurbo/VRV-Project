@@ -25,13 +25,13 @@
     <!-- Start Header -->
     <header>
         <!-- Navbar -->
-        <nav>
+        <nav id="navbar">
             <div class="container">
                 <a href="#">
                     <i class="fas fa-search"></i>
                 </a>
                 <img src="assets/logo.png" class="logo" alt="Logo" loading="lazy">
-                <a href="#">
+                <a href="cart.html">
                     <i class="fas fa-cart-shopping"></i>
                 </a>
             </div>
@@ -107,7 +107,7 @@
                         <h4>Gray T-Shirt</h4>
                         <div class="d-flex align-items-center justify-content-between">
                             <h5>200EG</h5>
-                            <button class="btn btn-danger">Buy Now!</button>
+                            <button class="btn btn-outline-light"><a href="product.html">Buy Now!</a></button>
                         </div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                         <h4>White T-Shirt</h4>
                         <div class="d-flex align-items-center justify-content-between">
                             <h5>200EG</h5>
-                            <button class="btn btn-danger">Buy Now!</button>
+                            <button class="btn btn-outline-light"><a href="product.html">Buy Now!</a></button>
                         </div>
                     </div>
                 </div>
@@ -126,46 +126,12 @@
         </div>
     </section>
     <!-- End latestProduct -->
-
-    <!-- Start Video -->
-    <section class="about video">
-        <div class="overlay"></div>
-        <video muted autoplay loop>
-            <source src="assets/copy_FBF68B41-078B-42F1-93ED-A0FDA5D591AB.mov" type="video/mp4">
-        </video>
-        <div class="container team-member">
-            <h3>Let's Create something Creative</h3>
-            <p>Have A contact with our Team</p>
-            <form action="post" class="w-50 m-auto">
-                <div class="row contact">
-                    <div class="col-md-6 col-sm-3">
-                        <input type="text" name="name" placeholder="Enter your Name" class="form-control">
-                    </div>
-                    <div class="col-md-6 col-sm-3">
-                        <input type="email" name="name" placeholder="Enter your Email" class="form-control">
-                    </div>
-                    <div class="col-md-12 col-sm-3">
-                        <input type="phone" name="name" placeholder="Enter your Phone Number" class="form-control">
-                    </div>
-                    <div class="col-md-12 col-sm-12">
-                        <textarea class="form-control" name="" placeholder="Your Message" id="" cols="60"
-                            rows="10"></textarea>
-                    </div>
-                    <div class="col-md-12 col-sm-12">
-                        <button class="btn btn-outline-light w-100">Send</button>
-                    </div>
-                </div>
-                <button class="btn btn-outline-light show-contact"><a href="contact.html">Contact Us</a></button>
-            </form>
-        </div>
-    </section>
-    <!-- End Video -->
     <!-- Start Featured Offer -->
     <section class="featured-offer latest-product">
         <div class="container">
             <h2>Featured Products</h2>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card">
                         <!-- product number 1 -->
                         <img src="assets/p1.jpg" alt="productNum1" loading="lazy" class="img-fluid p1">
@@ -181,7 +147,37 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="assets/p3.jpg" alt="productNum2" loading="lazy" class="img-fluid p3">
+                        <img src="assets/p4.jpg" alt="productNum2" loading="lazy" class="img-fluid p4">
+                        <h4>White T-Shirt</h4>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex">
+                                <h5 class="text-decoration-line-through muted me-2">400 EG</h5>
+                                <h5>250EG</h5>
+                            </div>
+                            <button class="btn btn-danger">Buy Now!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <!-- product number 1 -->
+                        <img src="assets/p1.jpg" alt="productNum1" loading="lazy" class="img-fluid p1">
+                        <!-- product number 1 -->
+                        <img src="assets/p2.jpg" alt="productNum1" loading="lazy" class="img-fluid p2">
+                        <h4>Gray T-Shirt</h4>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex">
+                                <h5 class="text-decoration-line-through muted me-2">300 EG</h5>
+                                <h5>200EG</h5>
+                            </div>
+                            <button class="btn btn-danger">Buy Now!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
                     <div class="card">
                         <img src="assets/p3.jpg" alt="productNum2" loading="lazy" class="img-fluid p3">
                         <img src="assets/p4.jpg" alt="productNum2" loading="lazy" class="img-fluid p4">
@@ -200,6 +196,39 @@
 
     </section>
     <!-- End Featured Offer -->
+        <!-- Start Video -->
+        <section class="about video">
+            <div class="overlay"></div>
+            <video muted autoplay loop>
+                <source src="assets/copy_FBF68B41-078B-42F1-93ED-A0FDA5D591AB.mov" type="video/mp4">
+            </video>
+            <div class="container team-member">
+                <h3>Let's Create something Creative</h3>
+                <p>Have A contact with our Team</p>
+                <form action="post" class="w-50 m-auto">
+                    <div class="row contact">
+                        <div class="col-md-6 col-sm-3">
+                            <input type="text" name="name" placeholder="Enter your Name" class="form-control">
+                        </div>
+                        <div class="col-md-6 col-sm-3">
+                            <input type="email" name="name" placeholder="Enter your Email" class="form-control">
+                        </div>
+                        <div class="col-md-12 col-sm-3">
+                            <input type="phone" name="name" placeholder="Enter your Phone Number" class="form-control">
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                            <textarea class="form-control" name="" placeholder="Your Message" id="" cols="60"
+                                rows="10"></textarea>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                            <button class="btn btn-outline-light w-100">Send</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline-light show-contact"><a href="contact.html">Contact Us</a></button>
+                </form>
+            </div>
+        </section>
+        <!-- End Video -->
     <!-- Start Footer -->
     <footer>
         <div class="container">

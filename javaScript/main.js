@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    $('.loading .spinner').fadeOut(1500, () => {
+    $('.loading .spinner').fadeOut(500, () => {
         $('.loading').fadeOut(500)
     })
 })
@@ -7,17 +7,19 @@ $(document).ready(() => {
 
 
 // changing Navbar
-
-let changingPart = $('.hero').offset(); // The length from the top to the section
-// changing the navbar color smoothly
-$(window).scroll(() => {
-    let wScroll = $(window).scrollTop();
-    if (wScroll > 50) {
+var prevScrollpos = window.scrollY;
+window.onscroll = function () {
+    var currentScrollPos = window.scrollY;
+    if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
         $('nav').css('backgroundColor', '#0000009a');
         $('nav a').css('color', '#fff')
     } else {
+        document.getElementById("navbar").style.top = "-180px";
         $('nav').css('backgroundColor', 'transparent');
         $('nav a').css('color', '#fff')
-    };
-})
+        prevScrollpos = 0;
+    }
 
+    prevScrollpos = currentScrollPos;
+}

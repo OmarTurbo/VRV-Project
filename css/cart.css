@@ -1,0 +1,27 @@
+main {
+    margin-top: 250px;
+}
+
+h2{
+    font-size: 36px;
+}
+
+
+.Pro-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.Pro-info img{
+    width:180px;
+}
+
+
+.quantity {
+    background: linear-gradient(45deg, #000 0%, #272727 80%);
+    color: #fff !important;
+    border: none;
+    border-radius: 25px;
+}
