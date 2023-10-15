@@ -25,3 +25,18 @@ h2{
     border: none;
     border-radius: 25px;
 }
+
+@media screen and (max-width:686px){
+    .products{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .Pro-info img{
+        width: 50px;
+    }
+    .Pro-info {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}
