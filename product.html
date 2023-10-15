@@ -54,38 +54,18 @@
                     </div>
                     <div class="col-md-6 info">
                         <h2 class="mb-5">Product Name</h2>
-                        <p class="mb-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In unde enim placeat
-                            adipisci eum quos ipsam officiis, quisquam eligendi ipsum suscipit impedit nihil saepe
-                            aspernatur mollitia reiciendis assumenda aliquam velit?</p>
-                        <p>
-                            <button class="btn btn-light" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseWidthExample" aria-expanded="false"
-                                aria-controls="collapseWidthExample">
-                                View Size-Chart
-                            </button>
-                        </p>
-                        <div style="min-height: 120px;">
-                            <div class="collapse collapse-horizontal" id="collapseWidthExample">
-                                <div class="card card-body bg-transparent" style="width: 300px;">
-                                    <img src="assets/sizeChart.jpg" alt="sizeChart" loading="lazy">
-                                </div>
-                            </div>
-                        </div>
                         <form action="cart.html" method="post">
                             <span class="mb-2 d-inline-block">Size:</span>
                             <br>
                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                 <input type="radio" class="btn-check" name="size" id="size1" autocomplete="off"
                                     value="s" checked>
-                                <label class="btn btn-outline-light" for="size1">Small</label>
+                                <label class="btn btn-outline-light rounded-pill" for="size1">Size 1</label>
 
                                 <input type="radio" class="btn-check" name="size" id="size2" autocomplete="off"
                                     value="m">
-                                <label class="btn btn-outline-light" for="size2">Medium</label>
+                                <label class="btn btn-outline-light rounded-pill ms-2" for="size2">Size 2</label>
 
-                                <input type="radio" class="btn-check" name="size" id="size3" autocomplete="off"
-                                    value="l">
-                                <label class="btn btn-outline-light" for="size3">Large</label>
                             </div>
                             <br>
                             <span class="my-3 d-inline-block">quantity:</span>
@@ -94,6 +74,22 @@
                             <h3>200EG</h3>
                             <button type="submit" class="w-100 btn btn-outline-light mt-2">Buy</button>
                         </form>
+                        <div class="accordion bg-transparent mt-3" id="accordionPanelsStayOpenExample">
+                            <div class="accordion-item bg-transparent">
+                                <h2 class="accordion-header bg-transparent">
+                                    <button class="accordion-button bg-transparent" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne"
+                                        aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                        Size-Chart
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                        <img src="assets/sizeChart.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

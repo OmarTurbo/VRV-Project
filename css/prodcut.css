@@ -41,7 +41,6 @@ body {
 nav {
     width: 100%;
     height: auto;
-    position: fixed;
     top: 0px;
     padding: 10px 0 ;
     z-index: 998;
@@ -168,6 +167,13 @@ main{
         bottom: -50px;
     }
 }
+
+.accordion-item,
+.accordion-button{
+    border: none !important;
+    color: #fff;
+}
+
 /* Footer */
 footer {
     padding: 50px 0;
