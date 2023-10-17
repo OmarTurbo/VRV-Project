@@ -28,3 +28,15 @@ container.addEventListener('mouseleave', () => {
     img.style.transform = 'scale(1) translate(0% ,0%)';
     container.style.cursor = 'default'
 })
+
+// Image Swiper
+
+
+const mainImg = document.querySelector('.col-md-6 .image img');
+let images = document.querySelectorAll('.col-md-6 .img-slider img');
+
+images.forEach(img => {
+    img.addEventListener('click',(e)=>{
+        mainImg.src = e.target.src
+    })
+})
