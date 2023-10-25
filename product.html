@@ -57,27 +57,33 @@
                     <div class="col-md-6">
                         <div class="info">
                             <h2 class="mb-5" id="pName"></h2>
-                            <form action="cart.html" method="get">
+                            <form method="post">
                                 <input type="hidden" name="productId" id="hidden">
                                 <span class="mb-2 d-inline-block">Size:</span>
                                 <br>
                                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                    <input type="radio" class="btn-check sizeOne" name="size" id="size1" autocomplete="off"
-                                        value="size1" checked>
+                                    <input type="checkbox" class="btn-check size sizeOne" name="size" id="size1"
+                                        autocomplete="off" value="size1">
                                     <label class="btn btn-outline-light rounded-pill" for="size1">Size 1</label>
 
-                                    <input type="radio" class="btn-check sizeTwo" name="size" id="size2" autocomplete="off"
-                                        value="size2">
-                                    <label class="btn btn-outline-light rounded-pill ms-2" for="size2">Size 2</label>
+                                    <input type="checkbox" class="btn-check size sizeTwo" name="size" id="size2"
+                                        autocomplete="off" value="size2">
+                                    <label class="btn btn-outline-light rounded-pill ms-2" for="size2">Size
+                                        2</label>
 
                                 </div>
+
                                 <br>
                                 <span class="my-3 d-inline-block">quantity:</span>
                                 <input type="number" name="quantity" id="quantity" min="1" value="1"
                                     class="form-control w-50 my-2 quantity">
                                 <h3 id="price"></h3>
                                 <input type="hidden" name="price" id="priceVal">
-                                <button type="submit" class="w-100 btn btn-outline-light mt-2">Add to cart</button>
+                                <button type="button" class="w-100 btn btn-outline-light mt-2"
+                                    onclick="addingDataStorage()">Add to cart</button>
+                                <div class="alert alert-secondary bg-success text-white" role="alert">
+                                    Added Successfully go check your cart
+                                </div>
                             </form>
                             <div class="accordion bg-transparent mt-3" id="accordionPanelsStayOpenExample">
                                 <div class="accordion-item bg-transparent">

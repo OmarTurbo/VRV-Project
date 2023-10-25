@@ -14,12 +14,12 @@ window.addEventListener('load', () => {
                 const imageGallery = json.data.imageGallery;
                 const imgSlider = document.querySelector('.img-slider');
                 //fetching id
-                document.querySelector('#hidden').setAttribute('value',`${prodId}`);
+                document.querySelector('#hidden').setAttribute('value', `${prodId}`);
                 //fetching productName
                 document.querySelector('#pName').innerHTML = prodName;
                 //fetching productPrice
                 document.querySelector('#price').innerHTML = `${prodPrice} EG`;
-                document.querySelector('#priceVal').setAttribute('value',`${prodPrice}`);
+                document.querySelector('#priceVal').setAttribute('value', `${prodPrice}`);
 
                 // fetching the image
                 document.querySelector('.mainImg').src = mainImg;
@@ -55,9 +55,42 @@ window.addEventListener('load', () => {
                         sizeTwo.removeAttribute("disabled")
                     };
                 })
+
+
             }))
 })
 
+function addingDataStorage() {
+    const pId = document.getElementById('hidden').value;
+    const quantity = document.querySelector('#quantity').value;
+    const size = document.querySelectorAll('.size');
+    let checked;
+    size.forEach(size => {
+        if (size.checked === true) {
+            checked = size.value;
+        }
+    })
+    const data = {
+        quantity: quantity,
+        size: checked,
+        product: pId
+    };
+    // posting data to orderitem route
+    fetch(`https://scarlet-chimpanzee-gear.cyclic.app/api/v1/orderitem`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+
+    }).then(res => {
+        if (res.ok) {
+            let alert = document.querySelector('.alert');
+            alert.style.display = "block";
+            setTimeout(() => { alert.style.display = 'none' }, 4000)
+        }
+    })
+}
 
 
 

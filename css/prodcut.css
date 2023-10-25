@@ -184,7 +184,10 @@ main{
         width: 80%;
     }
 }
-
+.alert{
+    margin-top: 20px;
+    display: none;
+}
 .accordion-item,
 .accordion-button{
     border: none !important;
