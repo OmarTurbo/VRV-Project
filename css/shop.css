@@ -10,6 +10,20 @@
     --section-padding: 100px 0;
 }
 
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000;
+}
+
+.btn:hover a {
+    color: #000;
+}
+
 body {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(76, 76, 76, 1) 47%, rgba(11, 11, 11, 1) 100%);
@@ -158,12 +172,18 @@ nav .nav-links li:hover a {
     overflow: hidden;
     position: relative;
 }
-.products .row{
+
+.products .row {
     margin-top: 50px;
+}
+
+.products .card{
+    text-align: start;
 }
 
 .products .card h4 {
     font-weight: 500;
+    margin: 10px 0;
 }
 
 .products .card h5 {
@@ -205,14 +225,20 @@ nav .nav-links li:hover a {
     transform: scale(1.03);
 
 }
-.products .col-md-3{
+
+.products .col-md-3 {
     margin-bottom: 20px;
 }
 
 /* latest Responsive */
 @media (max-width:767px) {
+    .sec-title {
+        font-size: 2em;
+    }
+
     .products .col-md-3 {
         margin-bottom: 35px;
+        width: 50%;
     }
 }
 

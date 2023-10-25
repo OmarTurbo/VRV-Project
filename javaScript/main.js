@@ -1,3 +1,35 @@
+const productContainer = document.querySelectorAll('.product');
+// Getting all product
+let container = ``
+fetch('https://scarlet-chimpanzee-gear.cyclic.app/api/v1/products')
+    .then(response => response.json()
+        .then(json => json.data.forEach(product => {
+            container += `
+            <div class="col-md-4">
+            <div class="card">
+                <!-- picture number 1 -->
+                <img src="${product.image}" alt="productNum1" loading="lazy" class="img-fluid p1">
+                <!-- picture number 1 -->
+                <img src="${product.imageGallery[1]}" alt="productNum1" loading="lazy" class="img-fluid p2">
+                <h4>${product.title}</h4>
+                <div class="d-flex align-items-center justify-content-between">
+                    <h5>${product.price} EG</h5>
+                    <form  method="get" action="product.html">
+                    <input type="hidden" class="hidden" name="productId" value="${product._id}">
+                    <button class="btn btn-outline-light shopBtn" type="submit">Buy Now!</button>
+                    </form>
+                </div>
+            </div>
+        </div>`;
+
+            productContainer.forEach(product => {
+                product.innerHTML = container
+            })
+        })))
+
+
+
+
 $(document).ready(() => {
     $('.loading .spinner').fadeOut(500, () => {
         $('.loading').fadeOut(500)
@@ -24,15 +56,7 @@ window.onscroll = function () {
     prevScrollpos = currentScrollPos;
 }
 
-// variable 
-var VIDEO_PLAYING_STATE = {
-    "PLAYING": "PLAYING",
-    "PAUSE": "PAUSE"
-}
-var videoPlayStatus = VIDEO_PLAYING_STATE.PAUSE
-var timeout = null
-var waiting = 3000
-var swiper = new Swiper(
+const swiper = new Swiper(
     '.swiper-container', {
     navigation: {
         nextEl: '.swiper-button-next',
@@ -44,12 +68,6 @@ var swiper = new Swiper(
     },
 });
 
-// HTML5 vdo object
-var options = {};
-var player = videojs('my-player', options);
-player.on('ended', function () {
-    next()
-})
 
 // swiper object
 swiper.on('slideChangeTransitionEnd', function () {
@@ -62,7 +80,7 @@ swiper.on('slideChangeTransitionEnd', function () {
         player.pause()
     }
 
-    
+
     clearTimeout(timeout)
 
     switch (currentSlideType) {
