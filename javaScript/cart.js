@@ -1,7 +1,7 @@
 const prodCont = document.querySelector('.products')
 
 //getting the data
-if (localStorage.getItem("products") == []) {// check that user have past storage
+if (localStorage.getItem("products") != []) {// check that user have past storage
     productContainer = JSON.parse(localStorage.getItem("products"));
     document.querySelector('.proceed').removeAttribute('disabled');
     displayData();

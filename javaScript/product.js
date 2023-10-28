@@ -64,7 +64,7 @@ window.addEventListener('load', async () => {
             }))
 })
 
-if (localStorage.getItem("products") != null) {// check that user have past storage
+if (window.localStorage.getItem("products") != null) {// check that user have past storage
     productContainer = JSON.parse(localStorage.getItem("products"));
 } else {
     productContainer = []; // if User don't have storage so it will create an empty array
