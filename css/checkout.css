@@ -135,36 +135,25 @@ main .form-control {
 
 
 .summery{
-    width: 300px;
+    width: 100%;
     background: linear-gradient(45deg, #000 0%, #272727 80%);
     border-radius: 10px;
     padding: 20px;
 }
+
 .summery .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 10px 0;
 }
-.summery img{
-    width: 30%;
-    border-radius: 5px;
+.summery .header .img{
+    width: 15%;
 }
-
-.summery .details h4,
-.summery .details h2{
-    font-weight: 300;
-}
-
-.summery .update button{
+.summery .header img{
     width: 100%;
 }
 
-@media screen and (max-width: 686px) {
-    .summery{
-        margin-top: 20px;
-        width: 100%;
-    }
-}
 /* Footer */
 footer {
     padding: 50px 0;

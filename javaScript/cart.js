@@ -1,56 +1,52 @@
-const deleteOrderItem = (id) => {
-    if (functionCall) {
-        fetch(`https://scarlet-chimpanzee-gear.cyclic.app/api/v1/orderitem/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(response => response.json())
-            .then(data => console.log(data)) // Manipulate the data retrieved back, if we want to do something with it
-            .catch(err => console.log(err)) // Do something with the error
-    }
-
-}
-let functionCall = false;
 //getting the data
-let container = ``
-fetch(`https://scarlet-chimpanzee-gear.cyclic.app/api/v1/orderitem`)
-    .then(res => res.json())
-    .then(json => {
-        json.data.forEach(prod => {
-            console.log(prod)
-            container += `
+if (localStorage.getItem("products") != null) {// check that user have past storage
+    productContainer = JSON.parse(localStorage.getItem("products"));
+    displayData();
+} else {
+    productContainer = []; // if User don't have storage so it will create an empty array
+}
 
-            <div class="Pro-info">
-            <div>
-                <h6>Product Image:</h6>
-                <img src="${prod.product.image}" alt="${prod.product.title}-image" loading="lazy">
-            </div>
-            <div>
-                <h6>Product Name:</h6>
-                <span>${prod.product.title}</span>
-            </div>
-            <div>
-                <h6>Price:</h6>
-                <span>${prod.product.price}</span>
-            </div>
-            <div>
-                <h6>Quantity:</h6>
-                <input type="number" name="quantity" id="quantity" min="1" value="${prod.quantity}"
-                    class="form-control w-50 my-2 quantity">
-                <button class="btn btn-danger delete"><i class="fas fa-trash"></i></button>
-            </div>
-            <div>
-                <h6>Total Price: ${prod.product.price * prod.quantity}</h6>
-                <span></span>
-            </div>
+// A function to Display the data in the table row 
+function displayData() {
+    container = ``;
+    for (let i = 0; i < productContainer.length; i++) {
+        container += `
+
+        <div class="Pro-info" >
+    <div>
+        <h6>Product Image:</h6>
+        <img src="${productContainer[i].coverImg}" alt="${productContainer[i].title}-image" loading="lazy">
+    </div>
+    <div>
+        <h6>Product Name:</h6>
+        <span>${productContainer[i].title}</span>
+    </div>
+    <div>
+        <h6>Price:</h6>
+        <span class="price">${productContainer[i].price}</span>
+    </div>
+    <div>
+        <h6>Quantity:</h6>
+        <span>${productContainer[i].quantity}</span>
         </div>
-            `
-        });
-        document.querySelector('.products').innerHTML = container;
-    })
-    console.log(container)
+        <div>
+        <h6>Total Price: ${productContainer[i].price * productContainer[i].quantity}</h6>
+        <span></span>
+        </div>
+        <button class="btn btn-danger delete" onclick="deleteProduct(${i})"><i class="fas fa-trash"></i></button>
+    </div>
+    `
+    }
+    document.querySelector('.products').innerHTML = container;
+}
 
+//Delete product
+
+function deleteProduct(e) {
+    productContainer.splice(e, 1);
+    displayData();
+    localStorage.setItem('products', JSON.stringify(productContainer));
+}
 
 
 
@@ -59,6 +55,4 @@ $(document).ready(() => {
     $('.loading .spinner').fadeOut(500, () => {
         $('.loading').fadeOut(500)
     })
-
-
 })

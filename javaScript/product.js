@@ -1,9 +1,8 @@
 // get the product data with the Id
-
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
     const params = (new URL(document.location)).searchParams;
     const id = params.get('productId');
-    fetch(`https://scarlet-chimpanzee-gear.cyclic.app/api/v1/products/${id}`)
+    await fetch(`https://scarlet-chimpanzee-gear.cyclic.app/api/v1/products/${id}`)
         .then(res => res.json()
             .then(json => {
                 const prodName = json.data.title;
@@ -17,6 +16,7 @@ window.addEventListener('load', () => {
                 document.querySelector('#hidden').setAttribute('value', `${prodId}`);
                 //fetching productName
                 document.querySelector('#pName').innerHTML = prodName;
+                document.querySelector('title').innerHTML = prodName
                 //fetching productPrice
                 document.querySelector('#price').innerHTML = `${prodPrice} EG`;
                 document.querySelector('#priceVal').setAttribute('value', `${prodPrice}`);
@@ -40,10 +40,13 @@ window.addEventListener('load', () => {
                 // Validating the size option
                 const sizeOne = document.querySelector('.sizeOne');
                 const sizeTwo = document.querySelector('.sizeTwo');
+                document.querySelector('#sizeOneQuantity').setAttribute('value', `${size[0].size1}`)
+                document.querySelector('#sizeTwoQuantity').setAttribute('value', `${size[0].size2}`)
 
                 size.forEach(size => {
                     if (size.size1 == 0) {
                         sizeOne.setAttribute("disabled", "")
+                        sizeOne.removeAttribute("checked");
                     }
                     else {
                         sizeOne.removeAttribute("disabled");
@@ -51,6 +54,7 @@ window.addEventListener('load', () => {
 
                     if (size.size2 == 0) {
                         sizeTwo.setAttribute("disabled", "");
+                        sizeOne.removeAttribute("checked");
                     } else {
                         sizeTwo.removeAttribute("disabled")
                     };
@@ -60,36 +64,56 @@ window.addEventListener('load', () => {
             }))
 })
 
-function addingDataStorage() {
+if (localStorage.getItem("products") != null) {// check that user have past storage
+    productContainer = JSON.parse(localStorage.getItem("products"));
+} else {
+    productContainer = []; // if User don't have storage so it will create an empty array
+}
+function addingDataToStorage() {
     const pId = document.getElementById('hidden').value;
     const quantity = document.querySelector('#quantity').value;
-    const size = document.querySelectorAll('.size');
+    const inputSize = document.querySelectorAll('.size');
+    const title = document.querySelector('#pName').textContent;
+    const coverImg = document.querySelector('.col-md-6 .image img').src;
+    const price = document.querySelector('#priceVal').value;
+    const alert = document.querySelector('.alert');
+    const sizeOne = document.querySelector('#sizeOneQuantity');
+    const sizeTwo = document.querySelector('#sizeTwoQuantity');
+    console.log(document.querySelector('#sizeOneQuantity'))
     let checked;
-    size.forEach(size => {
-        if (size.checked === true) {
-            checked = size.value;
+    let newSize;
+    inputSize.forEach(selectSize => {
+        if (selectSize.checked === true) {
+            checked = selectSize.value;
         }
-    })
-    const data = {
-        quantity: quantity,
-        size: checked,
-        product: pId
-    };
-    // posting data to orderitem route
-    fetch(`https://scarlet-chimpanzee-gear.cyclic.app/api/v1/orderitem`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
 
-    }).then(res => {
-        if (res.ok) {
-            let alert = document.querySelector('.alert');
-            alert.style.display = "block";
-            setTimeout(() => { alert.style.display = 'none' }, 4000)
+        if (checked == sizeOne.name) {
+            newSize = sizeOne.value - quantity;
+            if (newSize == 0) {
+                newSize = 0
+            }
+        } else if (checked == sizeTwo.name) {
+            newSize = sizeTwo.value - quantity;
+            if (newSize == 0) {
+                newSize = 0
+            }
         }
     })
+    data = {
+        title,
+        quantity,
+        size: checked,
+        id: pId,
+        coverImg,
+        price,
+        totalPrice: price * quantity,
+        newSize
+    };
+    // posting data to localStorage 
+    productContainer.push(data)
+    localStorage.setItem('products', JSON.stringify(productContainer));
+    alert.style.display = "block";
+    setTimeout(() => { alert.style.display = "none" }, 3000);
 }
 
 

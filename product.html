@@ -61,17 +61,18 @@
                                 <input type="hidden" name="productId" id="hidden">
                                 <span class="mb-2 d-inline-block">Size:</span>
                                 <br>
+                                <input type="hidden" name="size1" id="sizeOneQuantity">
                                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                    <input type="checkbox" class="btn-check size sizeOne" name="size" id="size1"
+                                    <input type="radio" class="btn-check size sizeOne" name="size" id="size1" checked
                                         autocomplete="off" value="size1">
                                     <label class="btn btn-outline-light rounded-pill" for="size1">Size 1</label>
 
-                                    <input type="checkbox" class="btn-check size sizeTwo" name="size" id="size2"
+                                    <input type="radio" class="btn-check size sizeTwo" name="size" id="size2"
                                         autocomplete="off" value="size2">
                                     <label class="btn btn-outline-light rounded-pill ms-2" for="size2">Size
                                         2</label>
-
                                 </div>
+                                <input type="hidden" name="size2" id="sizeTwoQuantity">
 
                                 <br>
                                 <span class="my-3 d-inline-block">quantity:</span>
@@ -80,7 +81,7 @@
                                 <h3 id="price"></h3>
                                 <input type="hidden" name="price" id="priceVal">
                                 <button type="button" class="w-100 btn btn-outline-light mt-2"
-                                    onclick="addingDataStorage()">Add to cart</button>
+                                    onclick="addingDataToStorage()">Add to cart</button>
                                 <div class="alert alert-secondary bg-success text-white" role="alert">
                                     Added Successfully go check your cart
                                 </div>
@@ -128,7 +129,8 @@
 
         </div>
         <div class="sub-foot">
-            <h6>All right reserved to <a href="https://omarturbo.github.io/cv-website/" target="_blank">Omar Turbo</a> &copy;</h6>
+            <h6>All right reserved to <a href="https://omarturbo.github.io/cv-website/" target="_blank">Omar Turbo</a>
+                &copy;</h6>
         </div>
     </footer>
     <!-- End Footer -->

@@ -48,81 +48,79 @@
                 <div class="col-md-6">
                     <h2>Here We are at the final step</h2>
                     <hr>
-                    <form action="index.html" method="post">
-                        <div class="conatct-info">
-                            <h3>Contact-Info</h3>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" name="email" id="email" class="form-control">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                    <div class="form-floating">
-                                        <input type="text" name="fname" id="fname" class="form-control">
-                                        <label for="fname">Your First Name</label>
-                                    </div>
+                    <div class="conatct-info">
+                        <h3>Contact-Info</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" name="email" id="email" class="form-control email">
+                                    <label for="email">Your Email</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="tel" name="phone" id="phone" class="form-control" ber">
-                                        <label for="phone">Your Phone Number</label>
-                                    </div>
-                                    <div class="form-floating">
-                                        <input type="email" name="lname" id="lname" class="form-control">
-                                        <label for="lname">Your Last Name</label>
-                                    </div>
+                                <div class="form-floating">
+                                    <input type="text" name="firstName" id="fname" class="form-control">
+                                    <label for="fname">Your First Name</label>
                                 </div>
                             </div>
-                            <hr>
-                        </div>
-                        <div class="location-info">
-                            <h3>Location-Info</h3>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" name="address" id="address" class="form-control">
-                                        <label for="address">Enter Your Address</label>
-                                    </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="tel" name="phone" id="phone" class="form-control">
+                                    <label for="phone">Your Phone Number</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" name="city" class="form-control" id="city">
-                                        <label for="city">City</label>
-                                    </div>
+                                <div class="form-floating">
+                                    <input type="text" name="lastName" id="lname" class="form-control">
+                                    <label for="lname">Your Last Name</label>
                                 </div>
                             </div>
-                            <hr>
                         </div>
-                        <div class="Payment-details">
-                            <h3>Payment-details</h3>
-                            <div class="alert alert-danger bg-danger fs-5 b-none text-white" role="alert">Payment method
-                                for now is cash on delivery</div>
+                        <hr>
+                    </div>
+                    <div class="location-info">
+                        <h3>Location-Info</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" name="address" id="address" class="form-control">
+                                    <label for="address">Enter Your Address</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" name="city" class="form-control" id="city">
+                                    <label for="city">City</label>
+                                </div>
+                                <span class="text-light">Note: Your city must be in lower case without any space to
+                                    have accurate shipping fees ex: "cairo"</span>
+                            </div>
                         </div>
-                        <div class="confirm">
-                            <button class="btn btn-outline-light w-100" type="submit">Confirm & Buy</button>
-                        </div>
-                    </form>
+                        <hr>
+                    </div>
+                    <div class="Payment-details">
+                        <h3>Payment-details</h3>
+                        <div class="alert alert-danger bg-danger fs-5 b-none text-white" role="alert">Payment method
+                            for now is cash on delivery</div>
+                    </div>
+                    <div class="confirm">
+                        <button class="btn btn-outline-light w-100 submit" type="submit">Confirm & Buy</button>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <div class="summery">
-                        <div class="header">
-                            <img src="assets/p3.jpg" alt="Product" loading="lazy">
-                            <h5>Product Name</h5>
-                        </div>
+                        <div class="parent"></div>
                         <hr>
-                        <h2>Product Details</h2>
-                        <div class="details">
-                            <h4>Price: <span>200 EG</span></h4>
-                            <h4>quantity: <span>1</span></h4>
-                            <h4>Size:<span>Size 1</span></h4>
+                        <div class="footer">
+                            <h5>SubTotal : <h6 class="text-muted sub">1000</h6>
+                            </h5>
+                            <h5>Shipping : <h6 class="text-muted ship">50</h6>
+                            </h5>
+                            <h5>Total : <h6 class="text-muted total">1050</h6>
+                            </h5>
+
                         </div>
-                        <!-- <hr> -->
-                        <div class="update">
-                            <button class="btn btn-outline-warning">Update</button>
-                        </div>
+
                     </div>
                 </div>
             </div>
+
         </div>
     </main>
 
@@ -146,7 +144,8 @@
 
         </div>
         <div class="sub-foot">
-            <h6>All right reserved to <a href="https://omarturbo.github.io/cv-website/" target="_blank">Omar Turbo</a> &copy;</h6>
+            <h6>All right reserved to <a href="https://omarturbo.github.io/cv-website/" target="_blank">Omar Turbo</a>
+                &copy;</h6>
         </div>
     </footer>
     <!-- End Footer -->
