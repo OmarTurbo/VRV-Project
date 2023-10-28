@@ -124,9 +124,6 @@ nav .nav-links li:hover a {
 
 /* product */
 
-main{
-    margin-top: 200px;
-}
 
 .col-md-6 .image img{
     width: 70%;
@@ -243,4 +240,7 @@ footer .sub-foot {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+}
+footer .sub-foot a{
+    color: #333;
 }

@@ -423,3 +423,6 @@ footer .sub-foot {
     justify-content: center;
     align-items: flex-end;
 }
+footer .sub-foot a{
+    color: #333;
+}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Name</title>
+    <title>Order Id Details</title>
     <!-- Tap icon -->
     <link rel="shortcut icon" href="assets/logo.png" type="image/png">
     <!-- GoogleFonts -->
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Main Css -->
     <link rel="stylesheet" href="css/prodcut.css">
+    <link rel="stylesheet" href="css/id.css">
 </head>
 
 <body>
@@ -25,8 +26,8 @@
     <!-- Navbar -->
     <nav id="navbar">
         <div class="container">
-            <a href="#">
-                <i class="fas fa-search"></i>
+            <a href="id.html">
+                <i class="fas fa-shirt"></i>
             </a>
             <img src="assets/logo.png" class="logo" alt="Logo" loading="lazy">
             <a href="cart.html">
@@ -42,9 +43,21 @@
         </div>
     </nav>
 
-        <main>
-            
-        </main>
+    <main>
+        <div class="container order">
+            <h2>Order Details</h2>
+
+            <h3>Order Id : <span class="id fw-bold"></span></h3>
+            <h3>Total Price : <span class="price fw-bold"></span></h3>
+
+            <h3 class="text-danger fw-bold">Very Important Note </h3>
+            <q class="fs-4">Please take this page a screenShot or save the order Id Number in a place cause is the only
+                way to make sure of your order and we will contact you as soon as possible</q>
+        </div>
+        <div class="container noOrder">
+            <p class="fs-1 fw-bold">No Order Found!</p>
+        </div>
+    </main>
     <!-- Start Footer -->
     <footer>
         <div class="container">
@@ -65,7 +78,8 @@
 
         </div>
         <div class="sub-foot">
-            <h6>All right reserved to <a href="https://omarturbo.github.io/cv-website/" target="_blank">Omar Turbo</a> &copy;</h6>
+            <h6>All right reserved to <a href="https://omarturbo.github.io/cv-website/" target="_blank">Omar Turbo</a>
+                &copy;</h6>
         </div>
     </footer>
     <!-- End Footer -->
@@ -74,7 +88,7 @@
     <!-- Jquery -->
     <script src="javaScript/jquery.js"></script>
     <!-- main js -->
-    <script src="javaScript/product.js"></script>
+    <script src="javaScript/id.js"></script>
 </body>
 
 </html>

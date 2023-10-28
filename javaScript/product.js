@@ -79,9 +79,13 @@ function addingDataToStorage() {
     const alert = document.querySelector('.alert');
     const sizeOne = document.querySelector('#sizeOneQuantity');
     const sizeTwo = document.querySelector('#sizeTwoQuantity');
-    console.log(document.querySelector('#sizeOneQuantity'))
     let checked;
     let newSize;
+    let oldSize;
+    let sizeObj = {
+        "size1": 0,
+        "size2": 0
+    }
     inputSize.forEach(selectSize => {
         if (selectSize.checked === true) {
             checked = selectSize.value;
@@ -89,11 +93,17 @@ function addingDataToStorage() {
 
         if (checked == sizeOne.name) {
             newSize = sizeOne.value - quantity;
+            oldSize = sizeTwo.value;
+            sizeObj.size1 = Number(newSize);
+            sizeObj.size2 = Number(oldSize);
             if (newSize == 0) {
                 newSize = 0
             }
         } else if (checked == sizeTwo.name) {
             newSize = sizeTwo.value - quantity;
+            oldSize = sizeOne.value;
+            sizeObj.size1 = Number(oldSize);
+            sizeObj.size2 = Number(newSize);
             if (newSize == 0) {
                 newSize = 0
             }
@@ -107,7 +117,8 @@ function addingDataToStorage() {
         coverImg,
         price,
         totalPrice: price * quantity,
-        newSize
+        newSize,
+        sizeObj
     };
     // posting data to localStorage 
     productContainer.push(data)

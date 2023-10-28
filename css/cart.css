@@ -45,3 +45,6 @@ nav{
         flex-direction: column;
     }
 }
+footer .sub-foot a{
+    color: #333;
+}

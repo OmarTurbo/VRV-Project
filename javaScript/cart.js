@@ -1,8 +1,12 @@
+const prodCont = document.querySelector('.products')
+
 //getting the data
-if (localStorage.getItem("products") != null) {// check that user have past storage
+if (localStorage.getItem("products") == []) {// check that user have past storage
     productContainer = JSON.parse(localStorage.getItem("products"));
+    document.querySelector('.proceed').removeAttribute('disabled');
     displayData();
 } else {
+    document.querySelector('.proceed').setAttribute('disabled',"");
     productContainer = []; // if User don't have storage so it will create an empty array
 }
 

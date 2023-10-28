@@ -54,16 +54,16 @@ sub.innerHTML = totalPrice;
 city.addEventListener('keyup', () => {
     if (city.value.toLowerCase() == 'cairo' || city.value == '') {
         ship.innerHTML = 50;
-        total = Number(ship.innerHTML) + totalPrice;
         total.innerHTML = Number(ship.innerHTML) + totalPrice;
+        total = Number(ship.innerHTML) + totalPrice;
     } else if (city.value.toLowerCase() == 'giza') {
         ship.innerHTML = 60;
-        total = Number(ship.innerHTML) + totalPrice;
         total.innerHTML = Number(ship.innerHTML) + totalPrice;
+        total = Number(ship.innerHTML) + totalPrice;
     } else {
         ship.innerHTML = 70;
-        total = Number(ship.innerHTML) + totalPrice;
         total.innerHTML = Number(ship.innerHTML) + totalPrice;
+        total = Number(ship.innerHTML) + totalPrice;
     }
 
 })
@@ -106,43 +106,44 @@ buyBtn.addEventListener('click', async () => {
 
         if (response.ok) {
             const jsonResponse = await response.json();
-            console.log(jsonResponse);
+            localStorage.setItem('id',JSON.stringify(jsonResponse.data._id))
         } else {
             console.error('Failed to submit the order.');
         }
     } catch (error) {
         console.error('An error occurred while sending the request:', error);
     };
-    productContainer.forEach(product => {
-        updateData(product.id, product.size, product.newSize, product.title)
-    });
+    async function updateData(id, prodName, size) {
+        const update = {
+            title: prodName,
+            size: [size]
+        }
+        try {
+            const response = await fetch(`https://scarlet-chimpanzee-gear.cyclic.app/api/v1/products/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(update)
 
+            })
+            if (response.ok) {
+                const jsonResponse = await response.json();
+            } else {
+                console.error('Failed to submit the order.');
+            }
+        } catch (error) {
+            console.error('An error occurred while sending the request:', error);
+        };
+    }
+    productContainer.forEach(product => {
+        updateData(product.id, product.title, product.sizeObj)
+    });
+    const idPageBtn = document.querySelector('.id');
+    const submitBtn = document.querySelector('.submit');
+    submitBtn.style.display = "none";
+    idPageBtn.style.display = "block";
+    localStorage.removeItem('products');
 })
 
-async function updateData(id, sizeName, newQuantity, prodName) {
-    const update = {
-        title: prodName,
-        size: {
-            sizeName: newQuantity
-        }
-    }
-    try {
-        const response = await fetch(`https://scarlet-chimpanzee-gear.cyclic.app/api/v1/products/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(update)
-
-        })
-        if (response.ok) {
-            const jsonResponse = await response.json();
-            console.log(jsonResponse);
-        } else {
-            console.error('Failed to submit the order.');
-        }
-    } catch (error) {
-        console.error('An error occurred while sending the request:', error);
-    };
-}

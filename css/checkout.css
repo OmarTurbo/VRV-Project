@@ -154,6 +154,15 @@ main .form-control {
     width: 100%;
 }
 
+.id{
+    margin-top: 20px;
+    display: none;
+}
+
+.id a{
+    color: #fff;
+}
+
 /* Footer */
 footer {
     padding: 50px 0;
@@ -203,4 +212,7 @@ footer .sub-foot {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+}
+footer .sub-foot a{
+    color: #333;
 }

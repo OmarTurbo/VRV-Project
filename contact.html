@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VRV-Cart</title>
+    <title>Order Id Details</title>
     <!-- Tap icon -->
     <link rel="shortcut icon" href="assets/logo.png" type="image/png">
     <!-- GoogleFonts -->
@@ -13,9 +13,8 @@
     <!-- Bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Main Css -->
-    <link rel="stylesheet" href="css/index.css">
-    <!-- cart css -->
-    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/prodcut.css">
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 
 <body>
@@ -45,16 +44,11 @@
     </nav>
 
     <main>
-        <div class="container border rounded p-3 overflow-auto">
-            <h2><i class="fas fa-cart-shopping"></i> Your Cart</h2>
-            <hr>
-            <div class="products">
-            </div>
-            <hr>
-            <button class="btn btn-success proceed" disabled><a href="checkOut.html">Proceed To checkout</a></button>
+        <div class="container text-center">
+            <p class="fs-2 fw-bold text-light">We still working on this page if you have any question or something to say just go instagram Page</p>
+            <a href="https://www.instagram.com/vrv.egy/" class="fs-4 fw-bold" target="_blank">Insta Page</a>
         </div>
     </main>
-
     <!-- Start Footer -->
     <footer>
         <div class="container">
@@ -75,7 +69,8 @@
 
         </div>
         <div class="sub-foot">
-            <h6>All right reserved to <a href="https://omarturbo.github.io/cv-website/" target="_blank">Omar Turbo</a> &copy;</h6>
+            <h6>All right reserved to <a href="https://omarturbo.github.io/cv-website/" target="_blank">Omar Turbo</a>
+                &copy;</h6>
         </div>
     </footer>
     <!-- End Footer -->
@@ -83,8 +78,15 @@
     <script src="javaScript/bootstrap.bundle.js"></script>
     <!-- Jquery -->
     <script src="javaScript/jquery.js"></script>
-    <!-- main  js-->
-    <script src="javaScript/cart.js"></script>
+    <!-- main js -->
+    <script>
+
+        $(document).ready(() => {
+            $('.loading .spinner').fadeOut(500, () => {
+                $('.loading').fadeOut(500)
+            })
+        })
+    </script>
 </body>
 
 </html>
