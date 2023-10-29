@@ -1,4 +1,4 @@
-const orderId = localStorage.getItem('id');
+const orderId = localStorage.getItem('vrvId');
 let orderIdParsed = JSON.parse(orderId);
 console.log(orderIdParsed)
 

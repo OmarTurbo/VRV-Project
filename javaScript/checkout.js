@@ -1,6 +1,6 @@
 //getting the data
-if (localStorage.getItem("products") != null) {// check that user have past storage
-    productContainer = JSON.parse(localStorage.getItem("products"));
+if (localStorage.getItem("vrvProducts") != null) {// check that user have past storage
+    productContainer = JSON.parse(localStorage.getItem("vrvProducts"));
     displayData();
 } else {
     productContainer = []; // if User don't have storage so it will create an empty array
@@ -106,7 +106,7 @@ buyBtn.addEventListener('click', async () => {
 
         if (response.ok) {
             const jsonResponse = await response.json();
-            localStorage.setItem('id',JSON.stringify(jsonResponse.data._id))
+            localStorage.setItem('vrvId',JSON.stringify(jsonResponse.data._id))
         } else {
             console.error('Failed to submit the order.');
         }

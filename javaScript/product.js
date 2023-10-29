@@ -122,9 +122,9 @@ function addingDataToStorage() {
     };
     // posting data to localStorage 
     productContainer.push(data)
-    localStorage.setItem('products', JSON.stringify(productContainer));
+    localStorage.setItem('vrvProducts', JSON.stringify(productContainer));
     alert.style.display = "block";
-    setTimeout(() => { alert.style.display = "none" }, 3000);
+    setTimeout(() => { alert.style.display = "none" }, 5000);
 }
 
 
@@ -159,7 +159,3 @@ container.addEventListener('mouseleave', () => {
     img.style.transform = 'scale(1) translate(0% ,0%)';
     container.style.cursor = 'default'
 })
-
-// Image Swiper
-
-

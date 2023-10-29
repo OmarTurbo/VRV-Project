@@ -1,12 +1,15 @@
-const prodCont = document.querySelector('.products')
-
+const prodCont = document.querySelector('.products');
+let productContainer;
+const value = localStorage.getItem('vrvProducts');
 //getting the data
-if (localStorage.getItem("products") != []) {// check that user have past storage
-    productContainer = JSON.parse(localStorage.getItem("products"));
+if (JSON.parse(value) != "") {
+    // check that user have past storage
+    productContainer = JSON.parse(localStorage.getItem("vrvProducts"));
     document.querySelector('.proceed').removeAttribute('disabled');
     displayData();
 } else {
-    document.querySelector('.proceed').setAttribute('disabled',"");
+
+    document.querySelector('.proceed').setAttribute('disabled', "");
     productContainer = []; // if User don't have storage so it will create an empty array
 }
 
@@ -49,8 +52,10 @@ function displayData() {
 function deleteProduct(e) {
     productContainer.splice(e, 1);
     displayData();
-    localStorage.setItem('products', JSON.stringify(productContainer));
+    localStorage.setItem('vrvProducts', JSON.stringify(productContainer));
+    window.location.reload();
 }
+
 
 
 
