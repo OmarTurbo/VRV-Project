@@ -216,3 +216,7 @@ footer .sub-foot {
 footer .sub-foot a{
     color: #333;
 }
+
+.validationData{
+    display: none;
+}

@@ -76,6 +76,8 @@ const phone = document.querySelector('#phone');
 const address = document.querySelector('#address');
 const quantity = document.querySelectorAll('.quantity');
 const productId = document.querySelectorAll('.prodId');
+const idPageBtn = document.querySelector('.id');
+const submitBtn = document.querySelector('.submit');
 
 let orderItem = []
 productContainer.forEach(item => {
@@ -106,7 +108,7 @@ buyBtn.addEventListener('click', async () => {
 
         if (response.ok) {
             const jsonResponse = await response.json();
-            localStorage.setItem('vrvId',JSON.stringify(jsonResponse.data._id))
+            localStorage.setItem('vrvId', JSON.stringify(jsonResponse.data._id))
         } else {
             console.error('Failed to submit the order.');
         }
@@ -140,10 +142,11 @@ buyBtn.addEventListener('click', async () => {
     productContainer.forEach(product => {
         updateData(product.id, product.title, product.sizeObj)
     });
-    const idPageBtn = document.querySelector('.id');
-    const submitBtn = document.querySelector('.submit');
     submitBtn.style.display = "none";
     idPageBtn.style.display = "block";
     localStorage.removeItem('products');
+    console.log('has value');
+
+
 })
 
