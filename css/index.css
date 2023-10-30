@@ -29,8 +29,8 @@ body {
     background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(76, 76, 76, 1) 47%, rgba(11, 11, 11, 1) 100%);
 }
 
-.rootReactVNB{
-    display: none;
+:not(body) #rootReactVNB{
+    display: none !important;
 }
 
 /* Loading screen */
