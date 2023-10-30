@@ -147,7 +147,7 @@ nav .nav-links li:hover a {
 }
 
 .hero button {
-    width: 10%;
+    width: 250px;
 }
 
 .hero button a {
@@ -230,16 +230,20 @@ nav .nav-links li:hover a {
     }
 
     .hero {
-        height: 350px;
+        height: 170px;
         margin-top: 150px;
     }
 
     .hero h1 {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .hero button {
-        width: 30%;
+        width: 100px;
+    }
+
+    .video{
+        display: none;
     }
 }
 

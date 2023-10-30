@@ -45,17 +45,21 @@ window.addEventListener('load', async () => {
 
                 size.forEach(size => {
                     if (size.size1 == 0) {
-                        sizeOne.setAttribute("disabled", "")
+                        sizeOne.setAttribute("disabled", "");
+                        document.querySelector('.sizeOneLabel').classList.add('text-decoration-line-through');
                         sizeOne.removeAttribute("checked");
                     }
                     else {
+                        document.querySelector('.sizeOneLabel').classList.remove('text-decoration-line-through');
                         sizeOne.removeAttribute("disabled");
                     }
 
                     if (size.size2 == 0) {
+                        document.querySelector('.sizeTwoLabel').classList.add('text-decoration-line-through');
                         sizeTwo.setAttribute("disabled", "");
                         sizeOne.removeAttribute("checked");
                     } else {
+                        document.querySelector('.sizeTwoLabel').classList.remove('text-decoration-line-through');
                         sizeTwo.removeAttribute("disabled")
                     };
                 })
