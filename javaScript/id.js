@@ -1,21 +1,20 @@
 const orderId = localStorage.getItem('vrvId');
 let orderIdParsed = JSON.parse(orderId);
-console.log(orderIdParsed)
 
 fetch(`https://scarlet-chimpanzee-gear.cyclic.app/api/v1/order/${orderIdParsed}`)
-.then(res => {
-    res.json()
+    .then(async res => {
 
-    if(!res.ok){
-        document.querySelector('.order').style.display = "none";
-        document.querySelector('.noOrder').style.display = "block";
-    }
-})
-.then(data => {
-    document.querySelector('.id').innerHTML = data.data._id;
-    document.querySelector('.price').innerHTML = data.data.totalPrice;
-})
-
+        if (!res.ok) {
+            document.querySelector('.order').style.display = "none";
+            document.querySelector('.noOrder').style.display = "block";
+            return console.log('done')
+        }
+        await res.json().then(order => {
+            document.querySelector('.id').innerHTML = order.data._id;
+            document.querySelector('.price').innerHTML = order.data.totalPrice;
+            document.querySelector('.statues').innerHTML = order.data.statues;
+        })
+    })
 
 
 
