@@ -90,7 +90,7 @@ buyBtn.addEventListener('click', async () => {
         email: email.value,
         firstName: firstName.value,
         lastName: lastName.value,
-        phone: Number(phone.value),
+        phone: `20${Number(phone.value)}`,
         address: address.value,
         city: city.value,
         totalPrice: total
@@ -132,6 +132,7 @@ buyBtn.addEventListener('click', async () => {
             })
             if (response.ok) {
                 const jsonResponse = await response.json();
+                console.log(jsonResponse)
             } else {
                 console.error('Failed to submit the order.');
             }
@@ -144,9 +145,6 @@ buyBtn.addEventListener('click', async () => {
     });
     submitBtn.style.display = "none";
     idPageBtn.style.display = "block";
-    localStorage.removeItem('products');
-    console.log('has value');
-
-
+    localStorage.removeItem('vrvProducts');
 })
 

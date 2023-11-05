@@ -1,8 +1,8 @@
 const prodCont = document.querySelector('.products');
 let productContainer;
-const value = localStorage.getItem('vrvProducts');
+const value = localStorage.key(1);
 //getting the data
-if (JSON.parse(value) != "") {
+if (value != null) {
     // check that user have past storage
     productContainer = JSON.parse(localStorage.getItem("vrvProducts"));
     document.querySelector('.proceed').removeAttribute('disabled');
