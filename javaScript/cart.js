@@ -1,6 +1,6 @@
 const prodCont = document.querySelector('.products');
 let productContainer;
-const value = localStorage.key(1);
+const value = localStorage.key(0);
 //getting the data
 if (value != null) {
     // check that user have past storage

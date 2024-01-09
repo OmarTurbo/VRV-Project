@@ -253,6 +253,7 @@ nav .nav-links li:hover a {
 
 /* Latest Product */
 .latest-product {
+    margin-top: 100px;
     padding: var(--section-padding);
 }
 
