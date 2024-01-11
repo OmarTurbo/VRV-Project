@@ -38,21 +38,38 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     z-index: 999;
     background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(76, 76, 76, 1) 47%, rgba(11, 11, 11, 1) 100%);
     display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 1;
 }
 
 .loading .spinner {
-    width: 70%;
+    width: 50%;
     opacity: 1;
+    animation: rotate 5s infinite linear;
+
+}
+body{
+    overflow: hidden;
 }
 
+.loading button{
+
+    text-decoration: underline;
+}
+/* 
+@media screen and (max-width:768px){
+    .loading .spinner{
+
+    }
+} */
 /*End Main Rules */
 /* Header */
 /* Navbar */
