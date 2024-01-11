@@ -30,9 +30,14 @@ fetch('https://scarlet-chimpanzee-gear.cyclic.app/api/v1/products')
 
 
 
-$(document).ready(() => {
+$('#closeScreen').click(() => {
     $('.loading .spinner').fadeOut(500, () => {
-        $('.loading').fadeOut(500)
+        $('.loading button').fadeOut(1,()=>{
+
+            $('.loading').fadeOut(500,()=>{
+                $('body').css('overflow',"auto")
+            })
+        })
     })
 })
 
