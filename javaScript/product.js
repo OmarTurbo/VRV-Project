@@ -125,6 +125,7 @@ function addingDataToStorage() {
         sizeObj
     };
     // posting data to localStorage 
+    productContainer = [];
     productContainer.push(data)
     localStorage.setItem('vrvProducts', JSON.stringify(productContainer));
     alert.style.display = "block";
