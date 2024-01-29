@@ -8,10 +8,14 @@ fetch('https://scarlet-chimpanzee-gear.cyclic.app/api/v1/products')
             <div class="col-md-3">
             <div class="card">
                 <!-- picture number 1 -->
-                <img src="${product.image}" alt="productNum1" loading="lazy" class="img-fluid p1">
+                <img src="${product.image}" alt="productNum1" decoding="async" fetchpriority="high" loading="lazy" class="img-fluid p1">
                 <!-- picture number 1 -->
-                <img src="${product.imageGallery[1]}" alt="productNum1" loading="lazy" class="img-fluid p2">
-                <h4>${product.title}</h4>
+                <picture>
+                    <source 
+                    type="image/webp">
+                   <img src="${product.imageGallery[1]}" alt="productNum1" decoding="async" fetchpriority="high" loading="lazy" class="img-fluid p2">
+                </picture>
+                   <h4>${product.title}</h4>
                 <div class="d-flex align-items-center justify-content-between">
                     <h5>${product.price} EG</h5>
                     <form  method="get" action="product.html">

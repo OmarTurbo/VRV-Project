@@ -54,39 +54,9 @@ nav .container {
 }
 
 nav .logo {
-    width: 15%;
-    animation: rotate 5s infinite linear;
+    width: 7%;
 }
 
-@keyframes rotate {
-    0% {
-        transform: rotateY(0deg);
-    }
-
-    10% {
-        transform: rotateY(45deg);
-    }
-
-    20% {
-        transform: rotateY(90deg);
-    }
-
-    30% {
-        transform: rotateY(180deg);
-    }
-
-    40% {
-        transform: rotateY(270deg);
-    }
-
-    50% {
-        transform: rotateY(360deg);
-    }
-
-    100% {
-        transform: rotateY(0deg);
-    }
-}
 
 nav .links {
     justify-content: center;
