@@ -22,7 +22,7 @@ function displayData() {
         <div class="Pro-info" >
     <div>
         <h6>Product Image:</h6>
-        <img src="${productContainer[i].coverImg}" alt="${productContainer[i].title}-image" loading="lazy">
+        <img src="${productContainer[i].coverImg}" alt="${productContainer[i].title}" loading="lazy" decoding="async" fetchpriority="high">
     </div>
     <div>
         <h6>Product Name:</h6>
