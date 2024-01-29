@@ -25,7 +25,7 @@ window.addEventListener('load', async () => {
                 document.querySelector('.mainImg').src = mainImg;
                 let imgContainer = ``;
                 imageGallery.forEach(img => {
-                    imgContainer += `<img src="${img}" alt="productNum1" loading="lazy">`;
+                    imgContainer += `<img src="${img}" alt="productNum1" decoding="async" fetchpriority="high" loading="lazy">`;
                 })
                 imgSlider.innerHTML = imgContainer;
                 const coverImg = document.querySelector('.col-md-6 .image img');
