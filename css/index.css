@@ -62,9 +62,8 @@ body {
 }
 
 .loading .spinner {
-  width: 50%;
+  width: 30%;
   opacity: 1;
-  animation: rotate 5s infinite linear;
 }
 body {
   overflow: hidden;
@@ -97,8 +96,7 @@ nav .container {
 }
 
 nav .logo {
-  width: 15%;
-  animation: rotate 5s infinite linear;
+  width: 50%;
 }
 
 @keyframes rotate {
