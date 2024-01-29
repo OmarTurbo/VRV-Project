@@ -68,7 +68,7 @@ body {
 
 @media screen and (max-width: 680px) {
   .loading .spinner {
-    width: 80%;
+    width: 40%;
   }
 }
 /*End Main Rules */
@@ -216,7 +216,7 @@ nav .nav-links li:hover a {
   }
 
   nav .logo {
-    width: 40%;
+    width: 20%;
   }
 
   .hero {
