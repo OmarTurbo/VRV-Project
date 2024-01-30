@@ -47,7 +47,13 @@ body {
   height: 100vh;
   z-index: 999;
   background: rgb(255, 255, 255);
-  background: linear-gradient(180deg, rgba(0,0,0,1) 44%, rgba(50,50,50,1) 96%, rgba(61,61,61,1) 99%, rgba(76,76,76,1) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 44%,
+    rgba(50, 50, 50, 1) 96%,
+    rgba(61, 61, 61, 1) 99%,
+    rgba(76, 76, 76, 1) 100%
+  );
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -91,8 +97,6 @@ nav .logo {
   width: 7%;
   margin-bottom: 10px;
 }
-
-
 
 nav .links {
   justify-content: center;
@@ -328,12 +332,22 @@ nav .nav-links li:hover a {
   background: rgb(0, 0, 0);
   background: linear-gradient(
     85deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(76, 76, 76, 1) 63%
+    rgba(0, 0, 0, 1) 20%,
+    rgba(76, 76, 76, 1) 100%
   );
   color: #fff;
   border: none;
   margin: 20px 0;
+}
+.about .form-control::placeholder{
+  color: rgba(255, 249, 249, 0.5);
+  letter-spacing: 2px;
+}
+.about .form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0,0, 0.4);
+}
+.about .form-control.error{
+  box-shadow: 0 0 0 0.25rem rgba(255, 51, 51, 0.781);
 }
 
 .about {
@@ -348,6 +362,22 @@ nav .nav-links li:hover a {
 .about p {
   font-size: 22px;
   font-weight: 700;
+}
+
+.about .error-box{
+  margin: -13px 10px 0px -20px;
+  display: none;
+}
+
+.about .error-box h4{
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  color: #d72222;
+}
+
+.about .feild.error .error-box{
+  display: block;
 }
 
 .about .show-contact {

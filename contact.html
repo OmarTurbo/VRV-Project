@@ -1,92 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Id Details</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Page</title>
     <!-- Tap icon -->
-    <link rel="shortcut icon" href="assets/logo.png" type="image/png">
+    <link rel="shortcut icon" href="assets/logo.png" type="image/png" />
     <!-- GoogleFonts -->
     <!-- fontAwesome -->
-    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/all.min.css" />
     <!-- Bootstrap css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Email alert -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.min.css"
+    />
     <!-- Main Css -->
-    <link rel="stylesheet" href="css/prodcut.css">
-    <link rel="stylesheet" href="css/contact.css">
-</head>
+    <link rel="stylesheet" href="css/prodcut.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
 
-<body>
+  <body>
     <!-- loading Screen -->
     <div class="loading">
-        <img src="assets/logo.png" class="spinner" alt="logo" loading="lazy">
+      <img src="assets/logo.png" class="spinner" alt="logo" loading="lazy" />
     </div>
 
     <!-- Navbar -->
     <nav id="navbar">
-        <div class="container">
-            <a href="id.html">
-                <i class="fas fa-shirt"></i>
-            </a>
-            <img src="assets/logoAnimated.gif" class="logo" alt="Logo" loading="lazy">
-            <a href="cart.html">
-                <i class="fas fa-cart-shopping"></i>
-            </a>
-        </div>
-        <div class="container links">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
+      <div class="container">
+        <a href="id.html">
+          <i class="fas fa-shirt"></i>
+        </a>
+        <img
+          src="assets/logoAnimated.gif"
+          class="logo"
+          alt="Logo"
+          loading="lazy"
+        />
+        <a href="cart.html">
+          <i class="fas fa-cart-shopping"></i>
+        </a>
+      </div>
+      <div class="container links">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
     <main>
-        <div class="container text-center">
-            <p class="fs-2 fw-bold text-light">We still working on this page if you have any question or something to say just go instagram Page</p>
-            <a href="https://www.instagram.com/vrv.egy/" class="fs-4 fw-bold" target="_blank">Insta Page</a>
-        </div>
+      <!-- Start Contact -->
+      <div class="container about">
+        <h3>Let's have a talk togther</h3>
+        <p>Have A contact with our Team</p>
+        <form action="#" class="w-50 m-auto">
+          <div class="row contact">
+            <div class="col-md-6 col-sm-3 feild">
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your Name"
+                class="form-control name"
+              />
+              <div class="error-box">
+                <h4>The Name box Can't be blank</h4>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-3 feild">
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your Email"
+                class="form-control email"
+              />
+              <div class="error-box email">
+                <h4>The Email box Can't be blank</h4>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-3 feild">
+              <input
+                type="phone"
+                name="number"
+                placeholder="Enter your Phone Number"
+                class="form-control number"
+              />
+              <div class="error-box">
+                <h4>The phone box Can't be blank</h4>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-3 feild">
+              <input
+                type="text"
+                name="subject"
+                placeholder="Enter message subject"
+                class="form-control subject"
+              />
+              <div class="error-box">
+                <h4>The subject box Can't be blank</h4>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12 feild">
+              <textarea
+                class="form-control message"
+                name="message"
+                placeholder="Your Message"
+                cols="60"
+                rows="10"
+              ></textarea>
+              <div class="error-box">
+                <h4>The Message box Can't be blank</h4>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <button class="btn btn-outline-light w-100" type="submit">
+                Send
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- End Contact -->
     </main>
     <!-- Start Footer -->
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="https://www.instagram.com/vrv.egy/" target="_blank">Instagram</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li>
+                <a href="https://www.instagram.com/vrv.egy/" target="_blank"
+                  >Instagram</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="sub-foot">
-            <h6>All right reserved to <a href="https://omarturbo.github.io/cv-website/" target="_blank">Omar Turbo</a>
-                &copy;</h6>
-        </div>
+      </div>
+      <div class="sub-foot">
+        <h6>
+          All right reserved to
+          <a href="https://omarturbo.github.io/cv-website/" target="_blank"
+            >Omar Turbo</a
+          >
+          &copy;
+        </h6>
+      </div>
     </footer>
     <!-- End Footer -->
     <!-- bootstrap Js -->
     <script src="javaScript/bootstrap.bundle.js"></script>
     <!-- Jquery -->
     <script src="javaScript/jquery.js"></script>
+    <!-- Email Sender -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>
     <!-- main js -->
+    <script src="javaScript/contact.js"></script>
     <script>
-
-        $(document).ready(() => {
-            $('.loading .spinner').fadeOut(500, () => {
-                $('.loading').fadeOut(500)
-            })
-        })
+      $(document).ready(() => {
+        $(".loading .spinner").fadeOut(500, () => {
+          $(".loading").fadeOut(500);
+        });
+      });
     </script>
-</body>
-
+  </body>
 </html>
