@@ -309,11 +309,11 @@ nav .nav-links li:hover a {
     width: 50%;
   }
   .latest-product .row {
-    justify-content: center;
+    justify-content: start;
   }
   .latest-product .card {
     width: 90%;
-    margin: auto;
+    /* margin: auto; */
   }
   .latest-product .card h4 {
     font-size: 20px;
