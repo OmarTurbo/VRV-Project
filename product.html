@@ -1,137 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
     <!-- Tap icon -->
-    <link rel="shortcut icon" href="assets/logo.png" type="image/png">
+    <link rel="shortcut icon" href="assets/logo.png" type="image/png" />
     <!-- GoogleFonts -->
     <!-- fontAwesome -->
-    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/all.min.css" />
     <!-- Bootstrap css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- Main Css -->
-    <link rel="stylesheet" href="css/prodcut.css">
-</head>
+    <link rel="stylesheet" href="css/prodcut.css" />
+  </head>
 
-<body>
+  <body>
     <!-- loading Screen -->
     <div class="loading">
-        <img src="assets/logo.png" class="spinner" alt="logo" loading="lazy">
+      <img src="assets/logo.png" class="spinner" alt="logo" loading="lazy" />
     </div>
 
     <!-- Navbar -->
     <nav id="navbar">
-        <div class="container">
-            <a href="id.html">
-                <i class="fas fa-shirt"></i>
-            </a>
-            <img src="assets/logoAnimated.gif" class="logo" alt="Logo" loading="lazy">
-            <a href="cart.html">
-                <i class="fas fa-cart-shopping"></i>
-            </a>
-        </div>
-        <div class="container links">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
+      <div class="container">
+        <a href="id.html">
+          <i class="fas fa-shirt"></i>
+        </a>
+        <img
+          src="assets/logoAnimated.gif"
+          class="logo"
+          alt="Logo"
+          loading="lazy"
+        />
+        <a href="cart.html">
+          <i class="fas fa-cart-shopping"></i>
+        </a>
+      </div>
+      <div class="container links">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
     <main>
-        <!-- Product Image and Details -->
-        <section class="pro">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 ">
-                        <div class="image overflow-hidden">
-                            <img src="" class="mainImg" alt="productNum1" loading="lazy">
-                        </div>
-                        <div class="img-slider">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="info">
-                            <h2 class="mb-5" id="pName"></h2>
-                            <form method="post">
-                                <input type="hidden" name="productId" id="hidden">
-                                <span class="mb-2 d-inline-block">Size:</span>
-                                <br>
-                                <input type="hidden" name="size1" id="sizeOneQuantity">
-                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                    <input type="radio" class="btn-check size sizeOne" name="size" id="size1" checked
-                                        autocomplete="off" value="size1">
-                                    <label class="btn btn-outline-light rounded-pill sizeOneLabel" for="size1">Size 1</label>
-
-                                    <input type="radio" class="btn-check size sizeTwo" name="size" id="size2"
-                                        autocomplete="off" value="size2">
-                                    <label class="btn btn-outline-light rounded-pill ms-2 sizeTwoLabel" for="size2">Size
-                                        2</label>
-                                </div>
-                                <input type="hidden" name="size2" id="sizeTwoQuantity">
-
-                                <br>
-                                <span class="my-3 d-inline-block">quantity:</span>
-                                <input type="number" name="quantity" id="quantity" min="1" value="1"
-                                    class="form-control w-50 my-2 quantity">
-                                <h3 id="price"></h3>
-                                <input type="hidden" name="price" id="priceVal">
-                                <button type="button" class="w-100 btn btn-outline-light mt-2"
-                                    onclick="addingDataToStorage()">Add to cart</button>
-                                <div class="alert alert-secondary bg-success text-white" role="alert">
-                                    Added Successfully go check your cart
-                                </div>
-                            </form>
-                            <div class="accordion bg-transparent mt-3" id="accordionPanelsStayOpenExample">
-                                <div class="accordion-item bg-transparent">
-                                    <h2 class="accordion-header bg-transparent">
-                                        <button class="accordion-button bg-transparent" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne"
-                                            aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                            Size-Chart
-                                        </button>
-                                    </h2>
-                                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                                        <div class="accordion-body">
-                                            <img src="assets/sizeChart.jpg" alt="size" decoding="async" fetchpriority="high">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+      <!-- Product Image and Details -->
+      <section class="pro">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="image overflow-hidden">
+                <img src="" class="mainImg" alt="productNum1" loading="lazy" />
+              </div>
+              <div class="img-slider"></div>
             </div>
-        </section>
+            <div class="col-md-6">
+              <div class="info">
+                <h2 class="mb-5" id="pName"></h2>
+                <form method="post">
+                  <input type="hidden" name="productId" id="hidden" />
+                  <span class="mb-2 d-inline-block">Size:</span>
+                  <br />
+                  <input type="hidden" name="small" id="smallQuantity" />
+                  <div
+                    class="btn-group"
+                    role="group"
+                    aria-label="Basic radio toggle button group"
+                  >
+                    <input
+                      type="radio"
+                      class="btn-check size small"
+                      name="size"
+                      id="small"
+                      checked
+                      autocomplete="off"
+                      value="size1"
+                    />
+                    <label
+                      class="btn btn-outline-light rounded-pill smallLabel"
+                      for="small"
+                      >Small</label
+                    >
+
+                    <input
+                      type="radio"
+                      class="btn-check size medium"
+                      name="size"
+                      id="medium"
+                      autocomplete="off"
+                      value="medium"
+                    />
+                    <label
+                      class="btn btn-outline-light rounded-pill ms-2 mediumLabel"
+                      for="medium"
+                      >Medium</label
+                    >
+                    <input
+                      type="radio"
+                      class="btn-check size large"
+                      name="size"
+                      id="large"
+                      autocomplete="off"
+                      value="large"
+                    />
+                    <label
+                      class="btn btn-outline-light rounded-pill ms-2 largeLabel"
+                      for="large"
+                      >large</label
+                    >
+                  </div>
+                  <input type="hidden" name="medium" id="mediumQuantity" />
+                  <input type="hidden" name="large" id="largeQuantity" />
+
+                  <br />
+                  <span class="my-3 d-inline-block">quantity:</span>
+                  <input
+                    type="number"
+                    name="quantity"
+                    id="quantity"
+                    min="1"
+                    value="1"
+                    class="form-control w-50 my-2 quantity"
+                  />
+                  <h3 id="price"></h3>
+                  <input type="hidden" name="price" id="priceVal" />
+                  <button
+                    type="button"
+                    class="w-100 btn btn-outline-light mt-2"
+                    onclick="addingDataToStorage()"
+                  >
+                    Add to cart
+                  </button>
+                  <div
+                    class="alert alert-secondary bg-success text-white"
+                    role="alert"
+                  >
+                    Added Successfully go check your cart
+                  </div>
+                </form>
+                <div
+                  class="accordion bg-transparent mt-3"
+                  id="accordionPanelsStayOpenExample"
+                >
+                  <div class="accordion-item bg-transparent">
+                    <h2 class="accordion-header bg-transparent">
+                      <button
+                        class="accordion-button bg-transparent"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne"
+                        aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne"
+                      >
+                        Size-Chart
+                      </button>
+                    </h2>
+                    <div
+                      id="panelsStayOpen-collapseOne"
+                      class="accordion-collapse collapse show"
+                    >
+                      <div class="accordion-body">
+                        <img
+                          src="assets/sizeChart.jpg"
+                          class="img-fluid"
+                          alt="size"
+                          decoding="async"
+                          fetchpriority="high"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- Start Footer -->
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="https://www.instagram.com/vrv.egy/" target="_blank">Instagram</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li>
+                <a href="https://www.instagram.com/vrv.egy/" target="_blank"
+                  >Instagram</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="sub-foot">
-            <h6>All right reserved to <a href="https://omarturbo.github.io/cv-website/" target="_blank">Omar Turbo</a>
-                &copy;</h6>
-        </div>
+      </div>
+      <div class="sub-foot">
+        <h6>
+          All right reserved to
+          <a href="https://omarturbo.github.io/cv-website/" target="_blank"
+            >Omar Turbo</a
+          >
+          &copy;
+        </h6>
+      </div>
     </footer>
     <!-- End Footer -->
     <!-- bootstrap Js -->
@@ -140,6 +219,5 @@
     <script src="javaScript/jquery.js"></script>
     <!-- main js -->
     <script src="javaScript/product.js"></script>
-</body>
-
+  </body>
 </html>
