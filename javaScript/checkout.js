@@ -1,16 +1,16 @@
 //getting the data
-if (localStorage.getItem("vrvProducts") != null) {// check that user have past storage
-    productContainer = JSON.parse(localStorage.getItem("vrvProducts"));
-    displayData();
+if (localStorage.getItem("vrvProducts") != null) {
+  // check that user have past storage
+  productContainer = JSON.parse(localStorage.getItem("vrvProducts"));
+  displayData();
 } else {
-    productContainer = []; // if User don't have storage so it will create an empty array
+  productContainer = []; // if User don't have storage so it will create an empty array
 }
 
 function displayData() {
-    let container = ``;
-    productContainer.forEach(product => {
-        container +=
-            `
+  let container = ``;
+  productContainer.forEach((product) => {
+    container += `
         <div class="header">
         <input type="hidden" value="${product.id}" class="prodId">
             <div class="img position-relative">
@@ -25,126 +25,133 @@ function displayData() {
         </div>
         
         `;
-    })
+  });
 
-    document.querySelector('.parent').innerHTML = container;
+  document.querySelector(".parent").innerHTML = container;
 }
 
 $(document).ready(() => {
-    $('.loading .spinner').fadeOut(500, () => {
-        $('.loading').fadeOut(500)
-    })
-})
+  $(".loading .spinner").fadeOut(500, () => {
+    $(".loading").fadeOut(500);
+  });
+});
 
-const price = document.querySelectorAll('.price');
-const sub = document.querySelector('.sub');
-const ship = document.querySelector('.ship');
-const city = document.querySelector('#city');
-let total = document.querySelector('.total');
+const price = document.querySelectorAll(".price");
+const sub = document.querySelector(".sub");
+const ship = document.querySelector(".ship");
+const city = document.querySelector("#city");
+let total = document.querySelector(".total");
 // adding subtotal
 let totalPrice = 0;
 for (let i = 0; i < price.length; i++) {
-    let element = Number(price[i].innerHTML);
-    totalPrice += element;
+  let element = Number(price[i].innerHTML);
+  totalPrice += element;
 }
 sub.innerHTML = totalPrice;
 
 // validate shipping & totalPrice
 
-city.addEventListener('keyup', () => {
-    if (city.value.toLowerCase() == 'cairo' || city.value == '') {
-        ship.innerHTML = 50;
-        total.innerHTML = Number(ship.innerHTML) + totalPrice;
-        total = Number(ship.innerHTML) + totalPrice;
-    } else if (city.value.toLowerCase() == 'giza') {
-        ship.innerHTML = 60;
-        total.innerHTML = Number(ship.innerHTML) + totalPrice;
-        total = Number(ship.innerHTML) + totalPrice;
+city.addEventListener("keyup", () => {
+  if (city.value.toLowerCase() == "cairo" || city.value == "") {
+    ship.innerHTML = 50;
+    total.innerHTML = Number(ship.innerHTML) + totalPrice;
+    total = Number(ship.innerHTML) + totalPrice;
+  } else if (city.value.toLowerCase() == "giza") {
+    ship.innerHTML = 60;
+    total.innerHTML = Number(ship.innerHTML) + totalPrice;
+    total = Number(ship.innerHTML) + totalPrice;
+  } else {
+    ship.innerHTML = 70;
+    total.innerHTML = Number(ship.innerHTML) + totalPrice;
+    total = Number(ship.innerHTML) + totalPrice;
+  }
+});
+
+const buyBtn = document.querySelector(".submit");
+const email = document.querySelector("#email");
+const firstName = document.querySelector("#fname");
+const lastName = document.querySelector("#lname");
+const phone = document.querySelector("#phone");
+const address = document.querySelector("#address");
+const quantity = document.querySelectorAll(".quantity");
+const productId = document.querySelectorAll(".prodId");
+const idPageBtn = document.querySelector(".id");
+const submitBtn = document.querySelector(".submit");
+
+let orderItem = [];
+productContainer.forEach((item) => {
+  orderItem.push({
+    quantity: Number(`${item.quantity}`),
+    size: `${item.size}`,
+    product: `${item.id}`,
+  });
+});
+// Adding order to DB
+buyBtn.addEventListener("click", async () => {
+  const data = {
+    orderItems: orderItem,
+    email: email.value,
+    firstName: firstName.value,
+    lastName: lastName.value,
+    phone: `20${Number(phone.value)}`,
+    address: address.value,
+    city: city.value,
+    totalPrice: total,
+  };
+
+  try {
+    const response = await fetch(
+      "https://scarlet-chimpanzee-gear.cyclic.app/api/v1/order",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      localStorage.setItem("vrvId", JSON.stringify(jsonResponse.data._id));
     } else {
-        ship.innerHTML = 70;
-        total.innerHTML = Number(ship.innerHTML) + totalPrice;
-        total = Number(ship.innerHTML) + totalPrice;
+      console.error("Failed to submit the order.");
     }
-
-})
-
-const buyBtn = document.querySelector('.submit');
-const email = document.querySelector('#email');
-const firstName = document.querySelector('#fname');
-const lastName = document.querySelector('#lname');
-const phone = document.querySelector('#phone');
-const address = document.querySelector('#address');
-const quantity = document.querySelectorAll('.quantity');
-const productId = document.querySelectorAll('.prodId');
-const idPageBtn = document.querySelector('.id');
-const submitBtn = document.querySelector('.submit');
-
-let orderItem = []
-productContainer.forEach(item => {
-    orderItem.push({ "quantity": Number(`${item.quantity}`), "size": `${item.size}`, "product": `${item.id}` })
-})
-// Adding order to DB 
-buyBtn.addEventListener('click', async () => {
-    const data = {
-        orderItems: orderItem,
-        email: email.value,
-        firstName: firstName.value,
-        lastName: lastName.value,
-        phone: `20${Number(phone.value)}`,
-        address: address.value,
-        city: city.value,
-        totalPrice: total
+  } catch (error) {
+    console.error("An error occurred while sending the request:", error);
+  }
+  async function updateData(id, prodName, size) {
+    const update = {
+      title: prodName,
+      size: [size],
     };
-
     try {
-        const response = await fetch("https://scarlet-chimpanzee-gear.cyclic.app/api/v1/order", {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-            const jsonResponse = await response.json();
-            localStorage.setItem('vrvId', JSON.stringify(jsonResponse.data._id))
-        } else {
-            console.error('Failed to submit the order.');
+      const response = await fetch(
+        `https://scarlet-chimpanzee-gear.cyclic.app/api/v1/products/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(update),
         }
+      );
+      if (response.ok) {
+        const jsonResponse = await response.json();
+        console.log(jsonResponse);
+      } else {
+        console.error("Failed to submit the order.");
+      }
     } catch (error) {
-        console.error('An error occurred while sending the request:', error);
-    };
-    async function updateData(id, prodName, size) {
-        const update = {
-            title: prodName,
-            size: [size]
-        }
-        try {
-            const response = await fetch(`https://scarlet-chimpanzee-gear.cyclic.app/api/v1/products/${id}`, {
-                method: 'PUT',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(update)
-
-            })
-            if (response.ok) {
-                const jsonResponse = await response.json();
-                console.log(jsonResponse)
-            } else {
-                console.error('Failed to submit the order.');
-            }
-        } catch (error) {
-            console.error('An error occurred while sending the request:', error);
-        };
+      console.error("An error occurred while sending the request:", error);
     }
-    productContainer.forEach(product => {
-        updateData(product.id, product.title, product.sizeObj)
-    });
-    submitBtn.style.display = "none";
-    idPageBtn.style.display = "block";
-    localStorage.removeItem('vrvProducts');
-})
-
+  }
+  productContainer.forEach((product) => {
+    updateData(product.id, product.title, product.sizeObj);
+  });
+  submitBtn.style.display = "none";
+  idPageBtn.style.display = "block";
+  localStorage.removeItem("vrvProducts");
+});

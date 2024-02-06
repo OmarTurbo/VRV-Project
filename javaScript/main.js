@@ -1,7 +1,7 @@
 const productContainer = document.querySelectorAll(".product");
 // Getting all product
 let container = ``;
-fetch("https://scarlet-chimpanzee-gear.cyclic.app/api/v1/products").then(
+fetch("https://scarlet-chimpanzee-gear.cyclic.app/api/v1/products?sort=-createdAt").then(
   (response) =>
     response.json().then((json) =>
       json.data.forEach((product) => {
