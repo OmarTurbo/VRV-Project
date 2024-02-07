@@ -95,7 +95,7 @@ window.addEventListener("load", async () => {
           document.querySelector('.addToCart').setAttribute("disabled","");
           document.querySelector('.addToCart').innerText = "No Quantity found we are doing our best to restock";
         }else{
-          document.querySelector('.addToCart').remove("disabled");
+          document.querySelector('.addToCart').removeAttribute("disabled");
           document.querySelector('.addToCart').innerText = "Add to cart";
         }
       });
