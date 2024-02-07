@@ -90,6 +90,14 @@ window.addEventListener("load", async () => {
             .classList.remove("text-decoration-line-through");
           large.removeAttribute("disabled");
         }
+
+        if(size.small == 0 && size.medium == 0 && size.large == 0){
+          document.querySelector('.addToCart').setAttribute("disabled","");
+          document.querySelector('.addToCart').innerText = "No Quantity found we are doing our best to restock";
+        }else{
+          document.querySelector('.addToCart').remove("disabled");
+          document.querySelector('.addToCart').innerText = "Add to cart";
+        }
       });
     })
   );
